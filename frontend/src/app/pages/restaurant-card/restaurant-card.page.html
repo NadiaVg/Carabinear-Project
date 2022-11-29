@@ -1,0 +1,33 @@
+<app-contact></app-contact>
+<ion-content>
+  <ion-list class="container-card">
+    <ion-item >
+      <ion-card class="card" align="center">
+              <ion-card-header>
+                <ion-card-title class="ion-text-wrap">
+                  {{ restaurants.name }}
+                </ion-card-title>
+                <img class="img" routerLink="/restaurant-card/{{restaurants.id}}" src="http://localhost:8080/images/{{restaurants.filename}}" alt="image" />
+              </ion-card-header>
+              <ion-card-content>
+                <ion-card-subtitle class="ion-text-wrap direction">
+                  {{ restaurants.direction }}
+                </ion-card-subtitle>
+                <form>
+                  <p class="valoration">
+                    <ion-icon class="star" name="star"></ion-icon>
+                    <ion-icon class="star" name="star"></ion-icon>
+                    <ion-icon class="star" name="star"></ion-icon>
+                    <ion-icon class="star" name="star"></ion-icon>
+                    <ion-icon class="star" name="star"></ion-icon>
+                  </p>
+                </form>
+              </ion-card-content>
+              <app-button class="button" title="Valorar"></app-button>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <app-menu></app-menu>
+</ion-footer>

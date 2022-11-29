@@ -1,0 +1,35 @@
+
+ion-card{
+    height: 85vh;
+    background: rgba(206, 199, 222, 0.5);
+    
+}
+
+
+.item{
+    position: relative;
+}
+
+
+
+
+.image{
+    width: 17em;
+    height: 17em;
+}
+
+ion-card-title{
+    font-size: 2.5em;
+    color: rgba(50, 10, 40, 1);
+}
+ion-card-subtitle.direction{
+    font-size: 1.2em; 
+    margin-top: 10%;
+    color: rgba(18, 18, 18, 1);
+
+}
+
+ion-icon.star{
+    color: gray;
+    font-size: 45px;
+}

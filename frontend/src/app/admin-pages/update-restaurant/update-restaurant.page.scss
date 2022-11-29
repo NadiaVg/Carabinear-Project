@@ -1,0 +1,39 @@
+ion-card {
+    height: 46em;
+    background: rgba(206, 199, 222, 0.5);
+    margin-top: 2em;
+
+}
+
+
+.item {
+    position: relative;
+}
+
+ion-card-title {
+    font-size: 2.5em;
+    color: rgba(50, 10, 40, 1);
+}
+
+ion-card-subtitle {
+    font-size: 1.2em;
+    margin-top: 20%;
+
+}
+
+.imageOptions {
+    height: 50px;
+    width: 150px;
+    outline: auto;
+    outline-color: rgba(61, 32, 122, 1);
+    color: rgba(61, 32, 122, 1);
+}
+
+.danger {
+    outline-color: red;
+}
+
+.submitButton {
+    --background: rgba(61, 32, 122, 1);
+}
+

@@ -1,0 +1,58 @@
+<ion-card>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="6">
+          <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
+          <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/img/no_image.png" (click)="takePhoto()">
+          </ion-img>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button class="imageOptions" fill="clear" (click)="takePhoto()">
+            Take a photo
+          </ion-button>
+          <ion-button class="imageOptions" fill="clear" (click)="pickImage()">
+            Pick an image
+          </ion-button>
+          <ion-button class="imageOptions danger" color="danger" fill="clear" (click)="discardImage()">
+            Discard image
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <form [formGroup]="restaurantForm" (ngSubmit)="submitForm()" >
+
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">Name is required.</span>
+      <ion-item lines="full">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input class="input" formControlName="name" type="text" required></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.category.errors?.required">Category is
+        required.</span>
+      <ion-item lines="full">
+        <ion-label position="floating">Category</ion-label>
+        <ion-input class="input" formControlName="category" type="text" required></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.direction.errors?.required">Direction is
+        required.</span>
+      <ion-item lines="full">
+        <ion-label position="floating">Direction</ion-label>
+        <ion-input class="input" formControlName="direction" type="text" required></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.CP.errors?.required">CP is required.</span>
+      <ion-item lines="full">
+        <ion-label position="floating">CP</ion-label>
+        <ion-input class="input" formControlName="CP" type="text" required></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" class="submitButton" expand="block">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-card-content>
+</ion-card>
+<ion-footer>
+  <app-admin-menu></app-admin-menu>
+</ion-footer>

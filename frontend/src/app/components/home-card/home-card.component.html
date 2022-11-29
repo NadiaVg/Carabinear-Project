@@ -1,0 +1,30 @@
+<div class="container">
+        <ion-img id="rightButton" src="/assets/buttons/botonDcha.png"></ion-img>
+        <ion-img id="leftButton" src="/assets/buttons/botonIzda.png"></ion-img>
+  <div class="item">
+    <ion-card *ngFor="let r of restaurant">
+      <ion-card-header>
+        <ion-card-title align="center">
+          {{ r.name }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content align="center">
+          <img class="image" src="http://localhost:8080/images/{{r.filename}}" alt="image" />
+        <ion-card-subtitle class="dark" align="center">
+          {{ r.direction }}
+        </ion-card-subtitle>
+        <div>
+          <ion-card-content align="center">
+            <ion-icon class="face happy" slot="icon-only" name="happy-outline"></ion-icon>
+
+            <ion-icon class="face sad" slot="icon-only" name="sad-outline"></ion-icon>
+
+          </ion-card-content>
+        </div>
+
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+</div>

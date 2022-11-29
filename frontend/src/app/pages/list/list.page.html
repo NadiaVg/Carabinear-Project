@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-searchbar class="custom" icon="search-outline" [(ngModel)]="searchRestaurant" showCancelButton="focus" animated
+    placeholder="Search..."></ion-searchbar>
+</ion-header>
+<ion-content>
+  <ion-list class="container-card">
+    <ion-item *ngFor="let r of restaurants | filter:searchRestaurant" align="center">
+      <ion-card class="card">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-card-header>
+                <img class="img" routerLink="/restaurant-card/{{r.id}}" src="http://localhost:8080/images/{{r.filename}}" alt="image" />
+              </ion-card-header>
+            </ion-col>
+            <ion-col>
+              <ion-card-content>
+                <ion-card-title class="ion-text-wrap">
+                  {{ r.name }}
+                </ion-card-title>
+                <ion-card-subtitle class="ion-text-wrap">
+                  {{ r.category }}
+                </ion-card-subtitle>
+                
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <app-menu></app-menu>
+</ion-footer>

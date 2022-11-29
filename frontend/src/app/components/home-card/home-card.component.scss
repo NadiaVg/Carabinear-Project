@@ -1,0 +1,55 @@
+.face{
+    width: 5em;
+    height: 5em;
+    margin-top: 2em;
+}
+.happy{
+    margin-right: 5em;
+    color: rgba(17, 79, 42, 1);
+}
+
+.sad{
+    color: rgba(137, 25, 25, 1);
+}
+ion-card{
+    height: 85vh;
+    background: rgba(206, 199, 222, 0.5);
+    margin-top: 3em;
+    
+}
+
+
+.item{
+    position: relative;
+}
+
+#rightButton{
+    width: 6em;
+    height: 6em;
+    position: absolute;
+    z-index: 1000;
+    top: 40%;
+    right: -26px;
+}
+#leftButton{
+    width: 6em;
+    height: 6em;
+    position: absolute;
+    z-index: 1000;
+    top: 40%;
+    left: -26px;
+}
+
+.image{
+    width: 17em;
+    height: 17em;
+}
+
+ion-card-title{
+    font-size: 2.5em;
+    color: rgba(50, 10, 40, 1);
+}
+ion-card-subtitle{
+    font-size: 1.2em; 
+    margin-top: 10%;
+}

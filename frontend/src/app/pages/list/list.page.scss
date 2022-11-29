@@ -1,0 +1,38 @@
+
+ion-card{
+    width: 95vw;
+    background: rgba(206, 199, 222, 0.5);
+    margin-top: 3em;
+    
+    
+}
+
+.item{
+    position: relative;
+}
+
+
+ion-card-title{
+    font-size: 1.2em;
+    color: rgba(50, 10, 40, 1);
+}
+ion-card-subtitle{
+    font-size: 1em; 
+    margin-top: 20%;
+}
+
+.img{
+    height: 8em;
+    width: 8em;
+    border-radius: 10px;
+}
+
+ion-searchbar.custom {
+    --background: rgba(218, 152, 153, 0.5);
+    --color: rgba(81, 23, 48, 1);
+    --placeholder-color: rgba(81, 23, 48, 1);
+    --icon-color: rgba(81, 23, 48, 1);
+    --clear-button-color: rgba(81, 23, 48, 1);
+  
+    --border-radius: 50px;
+  }
