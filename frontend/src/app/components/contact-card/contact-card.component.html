@@ -1,0 +1,32 @@
+<ion-card>
+  <ion-card-title align="center">
+      Contacta
+  </ion-card-title>
+  <ion-card-content>
+      <div>
+        <h2 class="dark"> Nombre </h2>
+          <ion-item>
+              <ion-input name="name" type="name" placeholder="name" ngModel required></ion-input>
+          </ion-item>
+          <h2 class="dark"> Email </h2>
+          <ion-item>
+              <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+          </ion-item>
+          <h2 class="dark"> Consulta </h2>
+          <ion-item>
+              <ion-input name="question" type="question" placeholder="question" ngModel required></ion-input>
+          </ion-item>
+      </div>
+      <br>
+      <div class="social" >
+        <ion-icon class="whatsapp" name="logo-whatsapp"></ion-icon>
+        <ion-icon class="telephone" name="call-outline"></ion-icon>
+        <ion-icon class="instagram" name="logo-instagram"></ion-icon>
+      </div>
+      <div align="center">
+          <app-button routerLink="/home" title="Enviar"></app-button>
+      </div>
+      <br>
+  </ion-card-content>
+
+</ion-card>

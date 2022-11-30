@@ -1,0 +1,50 @@
+<ion-content>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <ion-icon class="icon" name="log-out-outline"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+
+        </ion-col>
+        <ion-col align="end" size="3">
+          <ion-icon class="icon" name="moon-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-content align="center">
+      <img class="img" src="./assets/img/profile_example.png" alt="image" />
+    </ion-card-content>
+    <ion-card-content>
+      <div>
+        <h2 class="name"> Cambiar nombre </h2>
+        <ion-item>
+          <ion-input class="input" name="name" type="text" placeholder="Nadia Vega" ngModel required></ion-input>
+        </ion-item>
+        <ion-card-content align="center">
+          <app-button title="Confirmar"></app-button>
+        </ion-card-content>
+      </div>
+      <div class="email">
+        <h2> Email anterior </h2>
+        <ion-item>
+          <ion-input class="input" name="old_email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+        </ion-item>
+        <h2> Email nuevo </h2>
+        <ion-item>
+          <ion-input class="input" name="new_email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+        </ion-item>
+        <ion-card-content align="center">
+          <app-button title="Confirmar"></app-button>
+        </ion-card-content>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
+
+
+</ion-content>
+<footer>
+  <app-menu></app-menu>
+</footer>

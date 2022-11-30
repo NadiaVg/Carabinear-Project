@@ -1,0 +1,63 @@
+<ion-content>
+  <app-contact></app-contact>
+  <ion-card>
+    <ion-card-title align="center">
+        Registrarse
+    </ion-card-title>
+    <ion-card-content>
+        <div>
+          <ion-grid>
+              <ion-row class="ion-align-items-center">
+                <ion-col size="6">
+                  <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
+                  <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/img/no_image.png" (click)="takePhoto()">
+                  </ion-img>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-button class="imageOptions" fill="clear" (click)="takePhoto()">
+                    Take a photo
+                  </ion-button>
+                  <ion-button class="imageOptions" fill="clear" (click)="pickImage()">
+                    Pick an image
+                  </ion-button>
+                  <ion-button class="imageOptions danger" color="danger" fill="clear" (click)="discardImage()">
+                    Discard image
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          <h2 class="dark"> Nombre </h2>
+            <ion-item>
+                <ion-input name="name" type="text" placeholder="name" ngModel required></ion-input>
+            </ion-item>
+            <h2 class="dark"> Email </h2>
+            <ion-item>
+                <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+            </ion-item>
+            <h2 class="dark"> Código Postal </h2>
+            <ion-item>
+                <ion-input name="CP" type="number" placeholder="XXXXX" ngModel required></ion-input>
+            </ion-item>
+            <h2 class="dark"> Contraseña </h2>
+            <ion-item>
+                <ion-input name="password" type="password" placeholder="*****" ngModel required></ion-input>
+            </ion-item>
+            <h2 class="dark">Confirmar Contraseña </h2>
+            <ion-item>
+                <ion-input name="confirm" type="password" placeholder="*****" ngModel required></ion-input>
+            </ion-item>
+            
+        </div>
+        <br>
+        <div align="center">
+            <app-button routerLink="/home" title="Registrarse"></app-button>
+        </div>
+  
+        
+    </ion-card-content>
+  
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <app-logo-footer></app-logo-footer>
+</ion-footer>

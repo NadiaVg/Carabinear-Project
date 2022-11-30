@@ -1,0 +1,41 @@
+
+ion-card{
+    height: 90%;
+    width: 95%;
+    background: rgba(206, 199, 222, 0.5);
+    margin-top: 3em;
+    
+    
+}
+
+.item{
+    position: relative;
+}
+
+
+ion-card-title{
+    font-size: 1.2em;
+    color: rgba(50, 10, 40, 1);
+}
+ion-card-subtitle{
+    font-size: 1em; 
+    margin-top: 20%;
+}
+
+.img{
+    height: 8em;
+    width: 8em;
+    border-radius: 10px;
+}
+
+ion-icon.icon{
+    font-size: 40px;
+}
+
+ion-icon.delete{
+   color: red;
+}
+
+ion-icon.update{
+    color: rgba(61, 32, 122, 1);
+ }

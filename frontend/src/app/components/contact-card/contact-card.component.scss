@@ -1,0 +1,33 @@
+ion-card{
+    height: 42em;
+    background: rgba(206, 199, 222, 0.5);
+    margin-top: 3em;
+    
+}
+
+.whatsapp{
+    width: 3em;
+    height: 3em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.telephone{
+    width: 3em;
+    height: 3em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.instagram{
+    width: 3em;
+    height: 3em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.social{
+    display: flex;
+    place-content: center;
+    color: rgba(18, 18, 18, 1);
+}

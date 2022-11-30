@@ -1,0 +1,33 @@
+.icon {
+    width: 2em;
+    height: 2em;
+    color: rgba(255, 246, 253, 1);
+}
+
+.list-icon {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.profile-icon{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+ion-toolbar{
+    --background:rgba(98, 9, 10, 1);
+
+}
+
+.logo {
+    width: 3.5em;
+    height: 3.5em;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.center{
+    display: flex;
+    place-content: center;
+}
+
