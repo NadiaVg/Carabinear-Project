@@ -13,11 +13,11 @@ const routes: Routes = [
   },
   {
     path: 'login1',
-    loadChildren: () => import('./pages/login1/login1.module').then( m => m.Login1PageModule)
+    loadChildren: () => import('./auth/login1/login1.module').then( m => m.Login1PageModule)
   },
   {
     path: 'sign-in',
-    loadChildren: () => import('./pages/sign-in/sign-in.module').then( m => m.SignInPageModule)
+    loadChildren: () => import('./auth/sign-in/sign-in.module').then( m => m.SignInPageModule)
   },
   {
     path: 'contact',
@@ -50,10 +50,12 @@ const routes: Routes = [
   {
     path: 'restaurant-card/:id',
     loadChildren: () => import('./pages/restaurant-card/restaurant-card.module').then( m => m.RestaurantCardPageModule)
-  },  {
+  },
+  {
     path: 'profile-settings',
     loadChildren: () => import('./pages/profile-settings/profile-settings.module').then( m => m.ProfileSettingsPageModule)
   }
+
 
 
 ];

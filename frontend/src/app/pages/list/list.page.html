@@ -3,7 +3,7 @@
     placeholder="Search..."></ion-searchbar>
 </ion-header>
 <ion-content>
-  <ion-list class="container-card">
+  <ion-list class="container">
     <ion-item *ngFor="let r of restaurants | filter:searchRestaurant">
       <ion-card  align="center" class="card">
         <ion-grid [fixed]="true">

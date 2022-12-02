@@ -22,13 +22,13 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING
     }
   }, {});
-  Restaurant.associate = function (models) {
-    Restaurant.belongToMany(models.User, {
-      through: 'Valoration',
-      as: 'users',
-      foreignKey: 'RestaurantId',
-    })
-  }
+  // Restaurant.associate = function (models) {
+  //   Restaurant.belongToMany(models.User, {
+  //     through: 'Valoration',
+  //     as: 'users',
+  //     foreignKey: 'RestaurantId',
+  //   })
+  // }
 
   return Restaurant;
 }

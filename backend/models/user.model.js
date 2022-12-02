@@ -19,12 +19,12 @@ module.exports = (sequelize, Sequelize) => {
           type: Sequelize.STRING
         }
     }, {});
-    User.associate = function(models) {
-        User.belongsToMany(models.Restaurant, {
-            through: 'Valoration',
-            as: 'ValoratedRestaurants',
-            foreignKey: 'UserId',
-        })
-    }
+    // User.associate = function(models) {
+    //     User.belongsToMany(models.Restaurant, {
+    //         through: 'Valoration',
+    //         as: 'ValoratedRestaurants',
+    //         foreignKey: 'UserId',
+    //     })
+    // }
     return User;
 }

@@ -1,54 +1,28 @@
 const db = require("../models");
-const User = db.users;
-const Op= db.Sequelize.Op;
+const User = db.user;
+const Op = db.Sequelize.Op;
+const utils = require("../utils");
+const  bcrypt  =  require('bcryptjs');
 
-// Create and Save a new User
 exports.create = (req, res) => {
-    // Validate request
-    if (!req.body.name || !req.body.email || !req.body.password || !req.body.CP){
-      res.status(400).send({
-        message: "Content cannot be empty!"
-      });
-    }
-  
-    // Create a User
-    const user = {
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      CP: req.body.CP,
-      admin: req.body.admin ? req.body.isAdmin : false,
-      filename: req.file ? req.file.filename : ""
-    }
-  
-    // Save User in the database
-    User.create(user).then(data => {
-      res.send(data);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Some error occurred while creating the user"
-      })
+  //Validate request
+  if (!req.body.password || !req.body.email || !req.body.name || !req.body.CP || !req.body.admin) {
+    res.status(400).send({
+      message: "Content can not be empty!"
     });
-  }; 
+    return;
+  }
 
-  // Retrieve all Users from the database.
-exports.findAll = (req, res) => {
-    Restaurant.findAll().then(data => {
-      res.send(data);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Some error occurred while retrieving all Users"
-      })
-    })
+  // Create a User
+  let user = {
+    password: req.body.password,
+    name: req.body.name,
+    email: req.body.email,
+    CP: req.body.CP,
+    admin: req.body.admin ? req.body.admin : false
   };
 
-
-  // Find a single User with an id
-exports.findOne = (req, res) => {
-    const id = req.params.id;
-    console.log(id)
-  
-    User.findOne({ where: { email: user.email } })
+  User.findOne({ where: { email: user.email } })
     .then(data => {
       if (data) {
         const result = bcrypt.compareSync(user.password, data.password);
@@ -82,34 +56,46 @@ exports.findOne = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving User."
+          err.message || "Some error occurred while retrieving tutorials."
       });
     });
-  };
-  
 
-  // Update User
+};
+// Retrieve all Users from the database.
+exports.findAll = (req, res) => {
 
-exports.update = (req, res) => {
-
-    const id = req.params.id;
-    if (!req.body.name || !req.body.email || !req.body.password || !req.body.CP){
-      res.status(400).send({
-        message: "Content cannot be empty!"
+  User.findAll()
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
       });
-    }
+    });
+};
 
- // Create a User
- const user = {
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-    admin: req.body.admin ? req.body.isAdmin : "0",
-    CP: req.body.CP,
-    filename: req.file ? req.file.filename : ""
-  }
+// Find a single User with an id
+exports.findOne = (req, res) => {
+  const id = req.params.id;
 
-  User.update(user, {
+  User.findByPk(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving User with id=" + id
+      });
+    });
+};
+
+// Update a User by the id in the request
+exports.update = (req, res) => {
+  const id = req.params.id;
+
+  User.update(req.body, {
     where: { id: id }
   })
     .then(num => {
@@ -119,7 +105,7 @@ exports.update = (req, res) => {
         });
       } else {
         res.send({
-          message: `Cannot update User with id=${id}. Maybe Restaurant was not found!`
+          message: `Cannot update User with id=${id}. Maybe User was not found or req.body is empty!`
         });
       }
     })
@@ -128,54 +114,21 @@ exports.update = (req, res) => {
         message: "Error updating User with id=" + id
       });
     });
-
 };
-// Delete
 
+// Find user by username and password
+exports.findUserByEmailAndPassword = (req, res) => {
+  const email = req.body.email;
+  const pwd = req.body.password;
 
-exports.delete = (req, res) => {
-    const id = req.params.id;
-  
-    User.destroy({
-      where: { id: id }
-    })
-      .then(num => {
-        if (num == 1) {
-          res.send({
-            message: "User was deleted successfully!"
-          });
-        } else {
-          res.send({
-            message: `Cannot delete User with id=${id}. Maybe User was not found!`
-          });
-        }
-      })
-      .catch(err => {
-        res.status(500).send({
-          message: "Could not delete User with id=" + id
-        });
-      });
-  };
-
-
-  // Find a single Restaurant with an id
-exports.findOne = (req, res) => {
-  const id = req.params.id;
-  console.log(id)
-
-  User.findByPk(id)
+  User.findOne({ where: { email: email, password: pwd } })
     .then(data => {
-      if (data) {
-        res.send(data);
-      } else {
-        res.status(404).send({
-          message: `Cannot find Restaurant with id=${id}.`
-        });
-      }
+      res.send(data);
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error retrieving Restaurant with id=" + id
+        message:
+          err.message || "Some error occurred while retrieving tutorials."
       });
     });
 };
